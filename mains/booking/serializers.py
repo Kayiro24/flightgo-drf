@@ -27,7 +27,7 @@ class BookingSerializer(BaseSerializer):
         return attrs
 
 
-    # for getting serialized passenger instead of it's pk value
+    # for getting serialized passenger instead of using it's pk value
     def create(self, validated_data):
         passengers_data = validated_data.pop('passenger')
         booking = Booking.objects.create(**validated_data)
